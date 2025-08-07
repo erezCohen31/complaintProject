@@ -1,3 +1,9 @@
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 export const ComplaintController = {
   submitComplaint: (req, res) => {
     const { category, message } = req.body;
@@ -8,6 +14,6 @@ export const ComplaintController = {
 
     console.log(`Complaint received [${category}]:`, message);
 
-    res.send("Complaint received, thank you!");
+    res.sendFile(path.join(__dirname, "../public/receipt.html"));
   },
 };
