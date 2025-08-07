@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anonymous Complaints Box</title>
+  </head>
+  <body>
+    <header>
+      <p>Anonymous Complaints Box</p>
+    </header>
+
+    <main>
+      <p>
+        Welcome to the system. You can submit an anonymous complaint or access
+        the commanders' interface.
+      </p>
+
+      <button onclick="window.location.href='complaint.html'">
+        Send complaint
+      </button>
+
+      <hr />
+
+      <h2>Admin Login</h2>
+      <form action="/admin" method="POST">
+        <label for="admin-password">Enter password:</label><br />
+        <input
+          type="password"
+          id="admin-password"
+          name="password"
+          required
+          placeholder="Password"
+        /><br />
+        <button type="submit">Login</button>
+      </form>
+    </main>
+  </body>
+</html>
