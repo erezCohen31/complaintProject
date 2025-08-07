@@ -3,11 +3,14 @@ import path from "path";
 import { fileURLToPath } from "url";
 import complaintRoutes from "./routes/complaintRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
+import { connectToDB } from "./db/connect.js";
 import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
 const PORT = 3000;
+
+await connectToDB();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
