@@ -1,10 +1,8 @@
 import express from "express";
+import { ComplaintController } from "../controllers/complaintsController.js";
+
 const router = express.Router();
 
-router.post("/", (req, res) => {
-  const { message, category } = req.body;
-  console.log(`Complaint received [${category}]:`, message);
-  res.send("Complaint received, thank you!");
-});
+router.post("/", ComplaintController.submitComplaint);
 
 export default router;
