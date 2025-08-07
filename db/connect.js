@@ -1,8 +1,4 @@
-import mongoose from 'mongoose';
-import dotenv  from "dotenv";
-
-dotenv.config();
-
+import mongoose from "mongoose";
 
 export async function connectToDB() {
   try {
@@ -10,10 +6,9 @@ export async function connectToDB() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log('✅ Successfully connected to MongoDB');
+    console.log("Successfully connected to MongoDB");
   } catch (error) {
-    console.error('❌ Failed to connect to MongoDB:', error.message);
-    process.exit(1); 
+    console.error("Failed to connect to MongoDB:", error.message);
+    process.exit(1);
   }
 }
-

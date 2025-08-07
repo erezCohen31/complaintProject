@@ -2,11 +2,50 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <title>Admin Panel</title>
   </head>
   <body>
     <h1>Welcome, Commander</h1>
     <p>Here are the anonymous complaints:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Message</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      <tbody id="complaints-table-body"></tbody>
+    </table>
+
+    <script>
+      async function loadComplaints() {
+        try {
+          const response = await fetch("/admin/complaints");
+          if (!response.ok) throw new Error("Failed to fetch complaints");
+
+          const complaints = await response.json();
+          const tbody = document.getElementById("complaints-table-body");
+          tbody.innerHTML = "";
+
+          complaints.forEach((c) => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+            <td>${c.category}</td>
+            <td>${c.message}</td>
+            <td>${new Date(c.createdAt).toLocaleString()}</td>
+          `;
+            tbody.appendChild(tr);
+          });
+        } catch (error) {
+          console.error(error);
+          alert("Error loading complaints.");
+        }
+      }
+
+      loadComplaints();
+    </script>
   </body>
 </html>
