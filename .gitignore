@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Variables d'environnement
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dossiers de test ou coverage
+coverage/
+jest-coverage/
+
+# Fichiers système (Mac / Windows)
+.DS_Store
+Thumbs.db
+
+# Dossiers temporaires
+tmp/
+temp/
+
+# Fichiers générés par l'éditeur
+.vscode/
+.idea/
+*.swp
