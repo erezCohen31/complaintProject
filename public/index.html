@@ -12,27 +12,35 @@
     </header>
 
     <main>
-      <p>
-        Welcome to the system. You can submit an anonymous complaint or access
-        the commanders' interface.
-      </p>
+      <section>
+        <p>
+          Welcome to the system. You can submit an anonymous complaint or access
+          the commanders' interface.
+        </p>
+      </section>
 
-      <button onclick="window.location.href='complaint.html'">
-        Send complaint
-      </button>
+      <section>
+        <h2>Soldier Access</h2>
+        <button onclick="window.location.href='complaint.html'">
+          Send complaint
+        </button>
+      </section>
 
-      <h2>Admin Login</h2>
-      <form action="/admin" method="POST">
-        <label for="admin-password">Enter password:</label><br />
-        <input
-          type="password"
-          id="admin-password"
-          name="password"
-          required
-          placeholder="Password"
-        /><br />
-        <button type="submit">Login</button>
-      </form>
+      <br /><br />
+      <section>
+        <h2>Commander Access</h2>
+        <form action="/admin" method="POST">
+          <label for="admin-password">Enter password:</label><br />
+          <input
+            type="password"
+            id="admin-password"
+            name="password"
+            required
+            placeholder="Password"
+          /><br />
+          <button type="submit">Login</button>
+        </form>
+      </section>
     </main>
   </body>
 </html>
